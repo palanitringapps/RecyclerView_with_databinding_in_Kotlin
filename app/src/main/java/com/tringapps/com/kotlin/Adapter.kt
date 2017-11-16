@@ -5,7 +5,6 @@ import android.databinding.ViewDataBinding
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import com.tringapps.com.kotlin.databinding.AdapterBinding
 
 
 class CustomAdapter(val list: ArrayList<User>) : RecyclerView.Adapter<DataBindViewHolder>() {
@@ -15,16 +14,15 @@ class CustomAdapter(val list: ArrayList<User>) : RecyclerView.Adapter<DataBindVi
         val binding: ViewDataBinding =
                 DataBindingUtil.inflate(layoutInflater, R.layout.adapter, parent, false)
         val bind2: ViewDataBinding = DataBindingUtil.inflate(layoutInflater, R.layout.adapter1, parent, false)
-        when {
-            1 == viewType -> return DataBindViewHolder(binding)
-            2 == viewType -> return DataBindViewHolder(bind2)
-
+        when (viewType) {
+            1 -> return DataBindViewHolder(binding)
+            2 -> return DataBindViewHolder(bind2)
         }
         return DataBindViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: DataBindViewHolder, position: Int) {
-        
+
         holder.bind(list[position])
     }
 
