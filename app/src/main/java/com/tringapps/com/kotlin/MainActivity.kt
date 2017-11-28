@@ -24,5 +24,8 @@ class MainActivity : BaseActivity() {
         users.add(User("Yashar Khan", "Ranchi Jharkhand", 2))
         var adapter = CustomAdapter(users)
         rc.adapter = adapter
+
+        var test = Test()
+        test.test()
     }
 }
