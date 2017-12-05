@@ -11,7 +11,7 @@ public class Test {
 
     public void test() {
 
-        for (int i = 1000000; i <= 10000000; i++) {
+        for (int i = 1000000; i <= 100000000; i++) {
             int n = i;
             int sum = 0;
             while (n > 9) {
