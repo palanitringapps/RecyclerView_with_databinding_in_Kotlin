@@ -8,7 +8,6 @@ import android.view.ViewGroup
 
 
 class CustomAdapter(private val list: ArrayList<User>) : RecyclerView.Adapter<DataBindViewHolder>() {
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DataBindViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         val binding: ViewDataBinding =
@@ -23,7 +22,6 @@ class CustomAdapter(private val list: ArrayList<User>) : RecyclerView.Adapter<Da
     }
 
     override fun onBindViewHolder(holder: DataBindViewHolder, position: Int) {
-
         holder.bind(list[position])
     }
 
@@ -31,5 +29,4 @@ class CustomAdapter(private val list: ArrayList<User>) : RecyclerView.Adapter<Da
 
     override fun getItemViewType(position: Int): Int = list[position].id
 
-    override fun getItemId(position: Int): Long = super.getItemId(position)
 }
